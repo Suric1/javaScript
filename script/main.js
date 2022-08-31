@@ -1,3 +1,5 @@
+//  first lesson let const var
+
 'use strict';
 
 let number = 5;
@@ -22,8 +24,23 @@ console.log(obj);
 
 // alert(5);
 
-document.querySelector('.title').innerText = 'SURICAT HHI';
+let myHeader = document.querySelector('.title');
+myHeader.innerText = 'SURICAT HI';
 
-document.querySelector('.subtitle').innerText = 'Surbi';
+let subTitle = document.querySelector('.subtitle');
+subTitle.innerText = 'Surbi';
 
-document.querySelector('.descr').innerText = 52 + 63;
+let descr = document.querySelector('.descr');
+descr.innerText = 52 + 63;
+
+let numberOne = 10;
+let numberTwo = 15;
+let mySum = numberOne + numberTwo;
+let sumElement = document.querySelector('.sum');
+sumElement.innerText = mySum;
+
+let multElement = document.querySelector('.multiply');
+multElement.innerText = 5 * 10;
+
+let minusElement = document.querySelector('.minus');
+minusElement.innerText = 65 - 15;
