@@ -1,46 +1,72 @@
-//  first lesson let const var
+'use sctrict';
 
-'use strict';
+let number = 4.5;
 
-let number = 5;
-const leftBorderWidth = 1;
+console.log(-4 / 0);
+console.log('string' * 9);
 
-number = 2;
+const persone = 'Ihor';
 
-console.log(number);
+const bool = true;
+
+// console.log(something);
+
+let und;
+console.log(und);
 
 const obj = {
-  a: 50,
+  name: 'Ihor',
+  age: 32,
+  isMarried: false,
 };
 
-obj.a = 10;
+// console.log(obj.name);
 
-console.log(obj);
+console.log(obj['name']);
 
-{
-  let result = 50;
-  console.log(result);
-}
+let arr = ['plum.png', 'orange.jpg', 6, 'apple.bmp', {}, []];
+console.log(arr[1]);
 
-// alert(5);
+let addText = document.querySelector('.add-text');
+// let firstName = 'Ihore';
+// let lastName = 'Suric';
+// let age = 32;
 
-let myHeader = document.querySelector('.title');
-myHeader.innerText = 'SURICAT HI';
+let person = {
+  firstName: 'Ihore',
+  lastName: 'Suric',
+  age: 32,
+};
 
-let subTitle = document.querySelector('.subtitle');
-subTitle.innerText = 'Surbi';
+let fullName = `${person.firstName} ${person.lastName} ${person.age}`;
+addText.innerText = fullName;
 
-let descr = document.querySelector('.descr');
-descr.innerText = 52 + 63;
+// let fullName = firstName + ' ' + lastName + ' ' + age + ' ' + 'years old';
 
-let numberOne = 10;
-let numberTwo = 15;
-let mySum = numberOne + numberTwo;
-let sumElement = document.querySelector('.sum');
-sumElement.innerText = mySum;
+// let fullName = `${firstName} ${lastName} ${age} years old`;
+// addText.innerText = fullName;
 
-let multElement = document.querySelector('.multiply');
-multElement.innerText = 5 * 10;
+let car = document.querySelector('.car');
 
-let minusElement = document.querySelector('.minus');
-minusElement.innerText = 65 - 15;
+let myCar = {
+  model: 'audi',
+  year: 2020,
+  color: 'black',
+};
+
+car.innerText = `Model is ${myCar.model} color ${myCar.color} and year is ${myCar.year}`;
+
+// let carOne = 'BMW';
+// let carTwo = 'Audi';
+// let carThree = 'Tesla';
+
+let cars = ['BMW', 'AUDI', 'TESLA'];
+
+// cars.push('MERS);
+// cars.pop();
+cars.shift();
+cars.unshift('MERS');
+
+let myCars = document.querySelector('.cars');
+
+myCars.innerText = cars;
