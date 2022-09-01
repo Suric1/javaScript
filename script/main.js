@@ -1,28 +1,30 @@
-// function add(a, b, c) {
-//   return a + b + c;
-// }
+'use strict';
 
-// function greeting(name) {
-//   return `He ${name}`;
-// }
+function add(a, b, c) {
+  return a + b + c;
+}
 
-// let headerOne = document.querySelector('.header');
-// headerOne.innerText = add(5, 1, 15);
+function greeting(name) {
+  return `He ${name}`;
+}
 
-// let headerTwo = document.querySelector('.header-two');
-// headerTwo.innerText = add();
+let headerOne = document.querySelector('.header');
+headerOne.innerText = add(5, 1, 15);
 
-// let headerThree = document.querySelector('.header-three');
-// headerThree.innerText = add();
+let headerTwo = document.querySelector('.header-two');
+headerTwo.innerText = add();
 
-// let headerFour = document.querySelector('.header-four');
-// headerFour.innerText = add();
+let headerThree = document.querySelector('.header-three');
+headerThree.innerText = add();
 
-// let headerFive = document.querySelector('.header-five');
-// headerFive.innerText = add();
+let headerFour = document.querySelector('.header-four');
+headerFour.innerText = add();
 
-// let headerSix = document.querySelector('.header-six');
-// headerSix.innerText = add();
+let headerFive = document.querySelector('.header-five');
+headerFive.innerText = add();
+
+let headerSix = document.querySelector('.header-six');
+headerSix.innerText = add();
 
 function testFunction() {
   const x = 5;
@@ -99,10 +101,22 @@ count();
 
 document.querySelector('.out-1').addEventListener('mousemove', blockWidth);
 
-// document.querySelector('.out-1').onclick = count;
+document.querySelector('.out-1').onclick = count;
 
 let w = 100;
 function blockWidth() {
   w++;
   document.querySelector('.out-1').style.width = w + 'px';
 }
+
+let a = 9;
+
+function f1(b) {
+  document.querySelector('.out-1').textContent = a;
+}
+
+document.querySelector('button').onclick = () => {
+  f1(12);
+};
+
+
