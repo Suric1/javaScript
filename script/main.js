@@ -1,29 +1,21 @@
 'use strict';
 
-let number = 5;
-const leftBorderWidth = 1;
+const numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
 
-number = 2;
-
-console.log(number);
-
-const obj = {
-  a: 50,
+const personalMovieDB = {
+  count: numberOfFilms,
+  movies: {},
+  actors: {},
+  genres: [],
+  privat: false,
 };
 
-obj.a = 10;
+const a = prompt('Один из последних просмотренных фильмов', ''),
+  b = prompt('На сколько оцените его?', ''),
+  c = prompt('Один из последних просмотренных фильмов', ''),
+  d = prompt('На сколько оцените его?', '');
 
-console.log(obj);
+personalMovieDB.movies[a] = b;
+personalMovieDB.movies[c] = d;
 
-{
-  let result = 50;
-  console.log(result);
-}
-
-// alert(5);
-
-document.querySelector('.title').innerText = 'SURICAT HHI';
-
-document.querySelector('.subtitle').innerText = 'Surbi';
-
-document.querySelector('.descr').innerText = 52 + 63;
+console.log(personalMovieDB);
