@@ -1,46 +1,25 @@
-//  first lesson let const var
-
-'use strict';
-
-let number = 5;
-const leftBorderWidth = 1;
-
-number = 2;
-
-console.log(number);
-
-const obj = {
-  a: 50,
-};
-
-obj.a = 10;
-
-console.log(obj);
-
-{
-  let result = 50;
-  console.log(result);
+function add(a, b, c) {
+  return a + b + c;
 }
 
-// alert(5);
+function greeting(name) {
+  return `He ${name}`;
+}
 
-let myHeader = document.querySelector('.title');
-myHeader.innerText = 'SURICAT HI';
+let headerOne = document.querySelector('.header');
+headerOne.innerText = add(5, 1, 15);
 
-let subTitle = document.querySelector('.subtitle');
-subTitle.innerText = 'Surbi';
+// let headerTwo = document.querySelector('.header-two');
+// headerTwo.innerText = add();
 
-let descr = document.querySelector('.descr');
-descr.innerText = 52 + 63;
+// let headerThree = document.querySelector('.header-three');
+// headerThree.innerText = add();
 
-let numberOne = 10;
-let numberTwo = 15;
-let mySum = numberOne + numberTwo;
-let sumElement = document.querySelector('.sum');
-sumElement.innerText = mySum;
+// let headerFour = document.querySelector('.header-four');
+// headerFour.innerText = add();
 
-let multElement = document.querySelector('.multiply');
-multElement.innerText = 5 * 10;
+// let headerFive = document.querySelector('.header-five');
+// headerFive.innerText = add();
 
-let minusElement = document.querySelector('.minus');
-minusElement.innerText = 65 - 15;
+// let headerSix = document.querySelector('.header-six');
+// headerSix.innerText = add();
