@@ -1,46 +1,42 @@
-//  first lesson let const var
-
 'use strict';
 
-let number = 5;
-const leftBorderWidth = 1;
+// ОПЕРАТОРЫ В JS
 
-number = 2;
+console.log('arr' + '-object');
+console.log(4 + '-object');
 
-console.log(number);
+// ИНКРИМЕНТ И ДЕКРИМЕНТ
+let incr = 10,
+  decr = 10;
 
-const obj = {
-  a: 50,
-};
+// Оператор ИНКРИМЕНТА УВЕЛИЧЕНИЕ НА 1
+incr++;
+//  Оператор ДЕКРИМЕНТ УМЕНШЕНИЕ НА 1
+decr--;
+console.log(incr);
+console.log(decr);
 
-obj.a = 10;
+// ++ПРЕФИКСНЫЕ  ПОСТФИКСНЫЕ++
 
-console.log(obj);
+//  Оператор % возвращает отстаток от деления 2х чисел
+console.log(5 % 2);
 
-{
-  let result = 50;
-  console.log(result);
-}
+// Оператор равенства ==
+// Строгое сравнение(равенство) ===
+console.log(2 * 4 == 8);
 
-// alert(5);
+// Логические операторы И (&&) ИЛИ (||)
 
-let myHeader = document.querySelector('.title');
-myHeader.innerText = 'SURICAT HI';
+const isChecked = true,
+  isClose = true;
 
-let subTitle = document.querySelector('.subtitle');
-subTitle.innerText = 'Surbi';
+// Если оба правдивые true
+console.log(isChecked && isClose);
 
-let descr = document.querySelector('.descr');
-descr.innerText = 52 + 63;
+// Хотя бы один true
+console.log(isChecked || isChecked);
 
-let numberOne = 10;
-let numberTwo = 15;
-let mySum = numberOne + numberTwo;
-let sumElement = document.querySelector('.sum');
-sumElement.innerText = mySum;
-
-let multElement = document.querySelector('.multiply');
-multElement.innerText = 5 * 10;
-
-let minusElement = document.querySelector('.minus');
-minusElement.innerText = 65 - 15;
+//  Оператор отрицания !
+console.log(isChecked || !isClose);
+console.log(2 + 2 * 2 != 8);
+console.log(2 + 2 * 2 !== 8);
