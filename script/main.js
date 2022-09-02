@@ -1,46 +1,48 @@
-//  first lesson let const var
+// Уроки по Циклам и Условиям
 
 'use strict';
 
-let number = 5;
-const leftBorderWidth = 1;
+// УСЛОВИЯ
 
-number = 2;
+// if (4 == 9) {
+//   console.log('Ok');
+// } else {
+//   console.log('Error');
+// }
 
-console.log(number);
+// const num = 50;
 
-const obj = {
-  a: 50,
-};
+// if (num < 49) {
+//   console.log('Error');
+// } else if (num > 100) {
+//   console.log('МНОГО');
+// } else {
+//   console.log('ОК');
+// }
 
-obj.a = 10;
+// ДРУГОЙ СПОСОБ ЗАПИСИ УСЛОВИЯ (ТЕРНАРНОЕ)
 
-console.log(obj);
+// const num = 50;
 
-{
-  let result = 50;
-  console.log(result);
+//1 аргумент  2 аргумент            3 аргумент
+// num === 50 ? console.log('OK~') : console.log('EROR');
+
+//  МОДИФИКАЦИЯ IF  / ELSE  / IF ELSE
+
+//  switch всегда строгое сравнение
+const num = 50;
+
+switch (num) {
+  case 49:
+    console.log('Неверно');
+    break;
+  case 100:
+    console.log('Неверно');
+    break;
+  case 50:
+    console.log('Верно');
+    break;
+  default:
+    console.log('Не в этот раз');
+    break;
 }
-
-// alert(5);
-
-let myHeader = document.querySelector('.title');
-myHeader.innerText = 'SURICAT HI';
-
-let subTitle = document.querySelector('.subtitle');
-subTitle.innerText = 'Surbi';
-
-let descr = document.querySelector('.descr');
-descr.innerText = 52 + 63;
-
-let numberOne = 10;
-let numberTwo = 15;
-let mySum = numberOne + numberTwo;
-let sumElement = document.querySelector('.sum');
-sumElement.innerText = mySum;
-
-let multElement = document.querySelector('.multiply');
-multElement.innerText = 5 * 10;
-
-let minusElement = document.querySelector('.minus');
-minusElement.innerText = 65 - 15;
