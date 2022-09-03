@@ -1,46 +1,60 @@
-//  first lesson let const var
-
 'use strict';
+
+// Переменые  let const
 
 let number = 5;
 const leftBorderWidth = 1;
 
-number = 2;
-
+number = 10;
 console.log(number);
 
+// Прямых constant в JS Не бывает
 const obj = {
   a: 50,
 };
 
 obj.a = 10;
-
 console.log(obj);
 
+// Переменая var
+
+// До того пока переменная обьявлена называется ХОЙСТИНГ
+console.log(name);
+var name = 'Ihor';
+
+// let и const видны только в блоке кода ограниченые {}
+
 {
-  let result = 50;
-  console.log(result);
+  let resul = 50;
 }
 
-// alert(5);
+// console.log(resul);
 
-let myHeader = document.querySelector('.title');
-myHeader.innerText = 'SURICAT HI';
+// к var можно обращаться за {}
 
-let subTitle = document.querySelector('.subtitle');
-subTitle.innerText = 'Surbi';
+{
+  var result = 50;
+}
+
+console.log(result);
+
+//  Обращение к селекторам через JS
+
+let myTitle = document.querySelector('.title');
+myTitle.innerText = 'SURIC';
+
+let mySubTitle = document.querySelector('.subtitle');
+mySubTitle.innerText = 'Bembi';
 
 let descr = document.querySelector('.descr');
-descr.innerText = 52 + 63;
+descr.innerText = 5 + 6;
+
+
 
 let numberOne = 10;
 let numberTwo = 15;
+
 let mySum = numberOne + numberTwo;
 let sumElement = document.querySelector('.sum');
+
 sumElement.innerText = mySum;
-
-let multElement = document.querySelector('.multiply');
-multElement.innerText = 5 * 10;
-
-let minusElement = document.querySelector('.minus');
-minusElement.innerText = 65 - 15;
