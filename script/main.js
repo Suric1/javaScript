@@ -1,18 +1,56 @@
 'use sctrict';
 
-let number = 4.5;
+//    Типы Данных в JS
 
-console.log(-4 / 0);
+// ПРОСТЫЕ ТИПЫ                   ОБЬЕКТЫ
+
+// Числа number 1, 2, 3          СПЕЦ.ОБЬЕКТЫ         ОБЫЧНЫЕ ОБЬЕКТЫ
+// Строки 'string', 'name'
+// Логические типы (boolean)     Массивы []
+// true/false                    Функции function
+//                               Обьект Даты
+// null                          Регулярные выражения
+// undefined                     Ошибки
+// Symbol
+// BigInt
+// Специальные числовые значения Infinity или NaN
+
+// Числовой тип ДАННЫХ
+
+let number = 4;
+
+//  Infinity представляет собой математическую бесконечность ∞. Это особое значение, которое больше любого числа. Мы можем получить его в результате деления на ноль
+console.log(4 / 0);
+
+//  NaN строку умножить или - + на число
 console.log('string' * 9);
 
+//  СТРОКА 'string'  `string`
+
 const persone = 'Ihor';
+//  `` позволяют писать значения внутри
+let str = `HELLO ${persone}`;
+
+// Логический тип данных или БУЛИНОВОЕ ЗНАЧЕНИЕ  true / false
 
 const bool = true;
 
+// Null когда чего то не существует
+
 // console.log(something);
+
+//  undefined когда что то существует но у него нет никакого значения
 
 let und;
 console.log(und);
+
+// Числа не могут быть больше чем 2 ** 53 - 1
+//  2 в 53 степени - 1
+// Тип данных BigInt (BIG INTEGER)
+
+// Тип данных Symbol используется для создания уникальных идентификаторов в обьектах
+
+// ОБЬЕКТЫ это КЛЮЧЕВАЯ ЕДИНИЦА JavaScripta
 
 const obj = {
   name: 'Ihor',
@@ -21,52 +59,35 @@ const obj = {
 };
 
 // console.log(obj.name);
-
 console.log(obj['name']);
 
-let arr = ['plum.png', 'orange.jpg', 6, 'apple.bmp', {}, []];
+// Частный случай ОБЬЕКТОВ его разновидность МАССИВ []
+
+let arr = ['plum.png', 'orange.jpg', 6, 'apple.bmp', [], {}];
 console.log(arr[1]);
 
-let addText = document.querySelector('.add-text');
-// let firstName = 'Ihore';
-// let lastName = 'Suric';
-// let age = 32;
+// РАЗНИЦА МЕЖДУ МАССИВАМИ [] И ОБЬЕКТАМИ {}
+// МАССИВЫ ЭТО ПЕРЕЧЕНЬ ИНФОРМАЦИИ ПО ПОРЯДКУ, У КАЖДОЙ СУЩНОСТИ ЕСТЬ НОМЕР ПО ПОРЯДКУ
+// У МАССИВА ЕСТЬ СВОИ МЕТОДЫ И СВОЙСТВА (МЕТОД ПО ПЕРЕБОРУ КАЖДОГО ЭЛЕМЕНТА ПО ПОРЯДКУ)(МЕТОД ДОБАВЛЕНИЯ НОВОГО ЭЛЕМЕНТА В КОНЕЦ ИЛИ НАЧАЛА)(СВОЙСТВО ДЛИННЫ).
+const massive = [0, 1, 2];
+console.log(massive[1]);
 
-let person = {
-  firstName: 'Ihore',
-  lastName: 'Suric',
-  age: 32,
+// ОБЬЕКТЫ ЭТО СТРУКТУРА ХРАНЕНИЯ ДАННЫХ В ПАРНОМ ФОРМАТЕ КЛЮЧ + ЗНАЧЕНИЕ a: 1, b: 2
+const object = { a: 1, b: 2 };
+
+const object2 = {
+  Ihor: 500,
+  SURIC: 800,
 };
 
-let fullName = `${person.firstName} ${person.lastName} ${person.age}`;
-addText.innerText = fullName;
-
-// let fullName = firstName + ' ' + lastName + ' ' + age + ' ' + 'years old';
-
-// let fullName = `${firstName} ${lastName} ${age} years old`;
-// addText.innerText = fullName;
-
-let car = document.querySelector('.car');
-
-let myCar = {
-  model: 'audi',
-  year: 2020,
-  color: 'black',
+const arrObj = {
+  a: 'a',
+  1: 'b',
+  c: 'c',
 };
 
-car.innerText = `Model is ${myCar.model} color ${myCar.color} and year is ${myCar.year}`;
 
-// let carOne = 'BMW';
-// let carTwo = 'Audi';
-// let carThree = 'Tesla';
+arrObj['b'] = '555';
 
-let cars = ['BMW', 'AUDI', 'TESLA'];
-
-// cars.push('MERS);
-// cars.pop();
-cars.shift();
-cars.unshift('MERS');
-
-let myCars = document.querySelector('.cars');
-
-myCars.innerText = cars;
+console.log(arrObj.b);
+console.log(arrObj['b']);
