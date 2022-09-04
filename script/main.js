@@ -1,50 +1,29 @@
 'use strict';
+// УРОК -- ФУНКЦИИ -- function
 
-function add(a, b, c) {
-  return a + b + c;
-}
+// ФУНКЦИЯ ЭТО БЛОК ПРОГРАММНОГО КОДА НА ЯЗЫКЕ JS КОТОРАЯ КОТОРАЯ ОПРЕДЕЛЯЕТСЯ 1 РАЗ И МОЖЕТ ВЫЗЫВАТЬСЯ МНОГОКРАТНО
 
-function greeting(name) {
-  return `He ${name}`;
-}
+// function declaration
 
-let headerOne = document.querySelector('.header');
-headerOne.innerText = add(5, 1, 15);
-
-let headerTwo = document.querySelector('.header-two');
-headerTwo.innerText = add();
-
-let headerThree = document.querySelector('.header-three');
-headerThree.innerText = add();
-
-let headerFour = document.querySelector('.header-four');
-headerFour.innerText = add();
-
-let headerFive = document.querySelector('.header-five');
-headerFive.innerText = add();
-
-let headerSix = document.querySelector('.header-six');
-headerSix.innerText = add();
-
-function testFunction() {
+function testFuntcion() {
   const x = 5;
   const y = 10;
   console.log(x + y);
 }
+// ДЛЯ ТОГО ЧТОБЫ ЗАПУСТИТЬ ФУНКЦИЮ НЕОБХОДИМО УКАЗАТЬ ИМЯ ФУНКЦИИ И ПОСТАВИТЬ () Скобки
+// testFuntcion();
 
 function hello() {
-  testFunction();
-  console.log('Hello SurBi');
+  testFuntcion();
+  console.log('HELLO');
 }
-
-// testFunction();
 
 function testFunction2() {
   function t3() {
     console.log('t 3 function');
   }
   t3();
-  console.log('text funcion 2');
+  console.log('test function 2');
 }
 hello();
 testFunction2();
@@ -58,34 +37,30 @@ unixTime();
 
 function randomInt() {
   const min = 1;
-  const max = 200;
+  const max = 1000000000000000000;
   let rand = Math.floor(min + Math.random() * (max + 1 - min));
   console.log(rand);
 }
+randomInt();
 
 function randomInt() {
   console.log('random int 555');
 }
-
 randomInt();
 randomInt();
-randomInt();
-randomInt();
-randomInt();
-randomInt();
+// console.log(randomInt);
 
 let min = 1;
-let max = 1000000;
+let max = 1000000000000000000;
 
 function rand() {
   let rand = Math.floor(min + Math.random() * (max + 1 - min));
   console.log(rand);
 }
-
 rand();
 
-min = 5;
-max = 15;
+min = 15;
+max = 20;
 rand();
 
 let c = 9;
@@ -93,30 +68,15 @@ function count() {
   c++;
   console.log(c);
 }
-
-count();
-count();
 count();
 count();
 
 document.querySelector('.out-1').addEventListener('mousemove', blockWidth);
-
-document.querySelector('.out-1').onclick = count;
+// document.querySelector('.out-1').onclick = count;
 
 let w = 100;
+
 function blockWidth() {
   w++;
   document.querySelector('.out-1').style.width = w + 'px';
 }
-
-let a = 9;
-
-function f1(b) {
-  document.querySelector('.out-1').textContent = a;
-}
-
-document.querySelector('button').onclick = () => {
-  f1(12);
-};
-
-
