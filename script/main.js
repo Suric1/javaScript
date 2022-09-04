@@ -62,3 +62,20 @@ first: for (let i = 0; i < 3; i++) {
     }
   }
 }
+
+// let headerOne = document.createElement('h1');
+// headerOne.innerText = 'SURIC';
+
+// let headerTwo = document.createElement('h1');
+// headerTwo.innerText = 'BEMBI';
+
+// body.appendChild(headerOne);
+// body.appendChild(headerTwo);
+
+let body = document.querySelector('body');
+
+for (let start = 1; start < 16; start = start + 1) {
+  let header = document.createElement('h1');
+  header.innerText = 1 + 1;
+  body.appendChild(header);
+}
