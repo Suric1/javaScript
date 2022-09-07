@@ -1,146 +1,141 @@
 'use strict';
-// УРОК -- ФУНКЦИИ -- function
 
-// ФУНКЦИЯ ЭТО БЛОК ПРОГРАММНОГО КОДА НА ЯЗЫКЕ JS КОТОРАЯ КОТОРАЯ ОПРЕДЕЛЯЕТСЯ 1 РАЗ И МОЖЕТ ВЫЗЫВАТЬСЯ МНОГОКРАТНО
+//  Оператор return
 
-// function declaration
+const usdCurr = 28;
+const discount = 0.9;
 
-function testFuntcion() {
-  const x = 5;
-  const y = 10;
-  console.log(x + y);
-}
-// ДЛЯ ТОГО ЧТОБЫ ЗАПУСТИТЬ ФУНКЦИЮ НЕОБХОДИМО УКАЗАТЬ ИМЯ ФУНКЦИИ И ПОСТАВИТЬ () Скобки
-// testFuntcion();
-
-function hello() {
-  testFuntcion();
-  console.log('HELLO');
+function convert(amount, curr) {
+  return curr * amount;
 }
 
-function testFunction2() {
-  function t3() {
-    console.log('t 3 function');
+function promotion(result) {
+  console.log(result * discount);
+}
+const res = convert(500, usdCurr);
+
+promotion(res);
+
+function test() {
+  for (let i = 0; i < 5; i++) {
+    console.log(i);
+    if (i === 3) return;
   }
-  t3();
-  console.log('test function 2');
+  console.log('DONE');
 }
-hello();
-testFunction2();
+test();
 
-function unixTime() {
-  let time = Math.floor(new Date().getTime());
-  console.log(time);
-}
+function doNothing() {}
+console.log(doNothing() === undefined);
 
-unixTime();
+// Вывод данных введенных пользователем
 
-function randomInt() {
-  const min = 1;
-  const max = 1000000000000000000;
-  let rand = Math.floor(min + Math.random() * (max + 1 - min));
-  console.log(rand);
-}
-randomInt();
+document.querySelector('.b-3').addEventListener('click', function () {
+  const s = document.querySelector('.i-3').value;
+  document.querySelector('.out-3').innerHTML = 'HELLO ' + clearText(s);
+  console.log('HELLO ' + clearText(s));
+});
 
-function randomInt() {
-  console.log('random int 555');
-}
-randomInt();
-randomInt();
-// console.log(randomInt);
-
-let min = 1;
-let max = 1000000000000000000;
-
-function rand() {
-  let rand = Math.floor(min + Math.random() * (max + 1 - min));
-  console.log(rand);
-}
-rand();
-
-min = 15;
-max = 20;
-rand();
-
-let c = 9;
-function count() {
-  c++;
-  console.log(c);
-}
-count();
-count();
-
-document.querySelector('.out-1').addEventListener('mousemove', blockWidth);
-// document.querySelector('.out-1').onclick = count;
-
-let w = 100;
-
-function blockWidth() {
-  w++;
-  document.querySelector('.out-1').style.width = w + 'px';
+function clearText(data) {
+  return data.trim().toLowerCase();
 }
 
-//  АРГУМЕНТЫ ФУНКЦИИ
-
-function f1(a, b, c) {
-  console.log(a + b + c);
+function t4() {
+  console.log(1);
+  console.log(2);
+  console.log(3);
 }
 
-f1(44, 55, 11);
-f1(2, 3, 4, 5, 6);
-f1(5, 1);
+t4();
 
-function showSum(elem, x, y) {
-  document.querySelector(elem).textContent = x + y;
-}
-function showSum2(elem, x, y) {
-  elem.textContent = x + y;
-}
+//  Прерывание функции
 
-showSum('.out-2', 5, 6);
-const out1 = document.querySelector('.out-1');
-showSum2(out1, 5, 6);
+function indexOfEmul(arr, num) {
+  for (let i = 0; i < arr.lenght; i++) {
+    if (arr[i] === num) return i;
+  }
 
-function showSum3(x, y, elem = '.out-1') {
-  console.log(arguments);
-  document.querySelector(elem).textContent = x + y;
+  return -1;
 }
 
-showSum3(10, 52, '.out-2');
+let result = indexOfEmul([22, 33, 44, 55], 44);
+console.log(result);
 
-function showSumAll() {
-  console.log(arguments);
-  // let sum = 0;
-  // for (let i = 0; i < arguments.length; i++) {
-  //   sum += arguments[i];
-  // }
-  let sum = Array.from(arguments).reduce((accum, item) => (accum += item));
-  console.log(sum);
+//  Пользователь вводит свой возрост
+
+document.querySelector('.b-4').addEventListener('click', function () {
+  let year = +document.querySelector('.i-4').value;
+  if (isNaN(year)) return;
+  if (year <= 0 || year > 140) return;
+  document.querySelector('.out-4').innerHTML = 2021 - year;
+});
+
+//  ex 5 СУММА
+
+console.group('example 5');
+const arr5 = [
+  [3, 4, 5],
+  [6, 7, 8],
+];
+function t5() {
+  let s = 0;
+  for (let i = 0; i < arr5.length; i++) {
+    console.log(arr5[i]);
+    s += sum(arr5[i]);
+  }
+  console.log(s);
 }
 
-showSumAll(4, 5, 6, 1000);
-
-function showSumAll2(...args) {
-  console.log(args);
-  // let sum = 0;
-  // for (let i = 0; i < arguments.length; i++) {
-  //   sum += arguments[i];
-  // }
-  let sum = args.reduce((accum, item) => (accum += item));
-  console.log(sum);
+function sum(arr) {
+  let sum = 0;
+  for (let i = 0; i < arr.lenght; i++) {
+    sum += arr[i];
+  }
+  return sum;
 }
 
-showSumAll(4, 5, 6, 1000);
+console.log(t5());
+console.groupEnd();
 
-//  функция как аргумент
+console.group('example 6');
 
-function showAll(result) {
-  document.querySelector('.out-1').innerHTML = `<b>${result}</b>`;
+function t6() {
+  let a = 88;
+  return a;
+}
+console.log(t6());
+
+console.groupEnd();
+
+console.group('example 7');
+const arr = [
+  [3, 4, 5],
+  [6, 7, 9],
+  [7, 7, 1],
+  [2, 2],
+];
+
+const evenArr = arr.filter(function (item) {
+  return sum(item) % 2 === 0;
+});
+
+console.log(evenArr);
+
+//  return Функции
+
+function t8() {
+  return sum;
 }
 
-function showSumAll3(num, drawFunction) {
-  drawFunction(num);
+let s = t8();
+
+console.log(s([10, 20, 30]));
+
+function sum(a, b) {
+  return a + b;
 }
 
-showSumAll3(100000000000, showAll);
+let a = sum(4, 5);
+console.log(a);
+
+
