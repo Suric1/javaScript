@@ -1,141 +1,154 @@
 'use strict';
 
-//  Оператор return
+//  function Оператор return
 
-const usdCurr = 28;
-const discount = 0.9;
 
-function convert(amount, curr) {
-  return curr * amount;
+// ПЕРВЫЙ ПРИМЕР function return
+
+// let sum = 0
+function f1(x, y) {
+	// let sum = x+y
+	return x + y
 }
 
-function promotion(result) {
-  console.log(result * discount);
+f1(4, 5)
+f1(4, 45)
+
+
+function f2() {
+	console.log(2)
+	return 5
 }
-const res = convert(500, usdCurr);
 
-promotion(res);
+f2(2)
+console.log(5 + f2())
+console.log(f1(6, 7) + f1(4, 5))
 
-function test() {
-  for (let i = 0; i < 5; i++) {
-    console.log(i);
-    if (i === 3) return;
-  }
-  console.log('DONE');
+
+// ВТОРОЙ ПРИМЕР function return
+
+
+function randInt(min, max) {
+	let rand = min + Math.random() * (max + 1 - min)
+	return Math.floor(rand)
 }
-test();
 
-function doNothing() {}
-console.log(doNothing() === undefined);
+let r = randInt(222, 333)
+console.log(r)
+console.log(randInt(222, 333) + 100)
 
-// Вывод данных введенных пользователем
+// ВЫВОДИТЬ КУДА УГОДНО
+
+console.log(f1(100, 200))
+document.querySelector('.out1').textConcent = f1(300, 400)
+document.querySelector('.out1').style.background = 'rgb(23,156,201)'
+document.querySelector('.out1').style.background = `rgb(${randInt(0, 255)},${randInt(0, 255)},${randInt(0, 255)}`
+
+
+//ИСПОЛЬЗОВАТЬ В ВЫРАЖЕНИЯХ
+
+console.log(100 * f1(3, 4))
+
+
+// ВЫВОД ДАННЫХ ВВЕДЕНЫХ ПОЛЬЗОВАТЕЛЕМ
 
 document.querySelector('.b-3').addEventListener('click', function () {
-  const s = document.querySelector('.i-3').value;
-  document.querySelector('.out-3').innerHTML = 'HELLO ' + clearText(s);
-  console.log('HELLO ' + clearText(s));
-});
+	const s = document.querySelector('.i-3').value
+	document.querySelector('.out-3').innerHTML = 'HELLO SURICA ' + clearText(s)
+	console.log('HELLO SURICA ' + clearText(s))
+})
 
 function clearText(data) {
-  return data.trim().toLowerCase();
+	return data.trim().toLowerCase()
 }
+
+// return ПРЕРЫВАЕТ ВЫПОЛЕНИЕ function
 
 function t4() {
-  console.log(1);
-  console.log(2);
-  console.log(3);
+	console.log(1)
+	return
+	console.log(2)
+	console.log(3)
 }
 
-t4();
+t4()
 
-//  Прерывание функции
+// ПРЕРЫВАНИЕ ФУНКЦИИ
+// эмулируем indexOf
 
 function indexOfEmul(arr, num) {
-  for (let i = 0; i < arr.lenght; i++) {
-    if (arr[i] === num) return i;
-  }
-
-  return -1;
+	for (let i = 0; i < arr.length; i++) {
+		if (arr[i] === num) return i
+	}
+	
+	return -1
 }
 
-let result = indexOfEmul([22, 33, 44, 55], 44);
-console.log(result);
+let result = indexOfEmul([22, 33, 44, 55], 22)
+console.log(result)
 
-//  Пользователь вводит свой возрост
+// ПОЛЬЗОВАТЕЛЬ ВВОДИТ СВОЙ ВОЗРОСТ
 
 document.querySelector('.b-4').addEventListener('click', function () {
-  let year = +document.querySelector('.i-4').value;
-  if (isNaN(year)) return;
-  if (year <= 0 || year > 140) return;
-  document.querySelector('.out-4').innerHTML = 2021 - year;
-});
+	let year = +document.querySelector('.i-4').value
+	if (isNaN(year)) return
+	if (year <= 0 || year > 140) return;
+	document.querySelector('.out-4').innerHTML = 2021 - year
+})
 
-//  ex 5 СУММА
 
-console.group('example 5');
-const arr5 = [
-  [3, 4, 5],
-  [6, 7, 8],
-];
+// ex 5 СУММА
+
+console.group('example 5')
+const arr5 = [[3, 4, 5], [6, 7, 8]]
+
 function t5() {
-  let s = 0;
-  for (let i = 0; i < arr5.length; i++) {
-    console.log(arr5[i]);
-    s += sum(arr5[i]);
-  }
-  console.log(s);
+	let s = 0
+	for (let i = 0; i < arr5.length; i++) {
+		s += sum(arr5[i])
+	}
+	return s
 }
 
 function sum(arr) {
-  let sum = 0;
-  for (let i = 0; i < arr.lenght; i++) {
-    sum += arr[i];
-  }
-  return sum;
+	let sum = 0
+	for (let i = 0; i < arr.length; i++) {
+		// console.log(arr[i])
+		sum += arr[i]
+	}
+	return sum
 }
 
-console.log(t5());
-console.groupEnd();
+console.log(t5())
+console.groupEnd()
 
-console.group('example 6');
+
+// ex 6 ПЕРЕНОС СТРОКИ ОШИБКА return ПРИМЕНЯТЬ () ДЛЯ ПЕРЕСОНА
+
+console.group('example 6')
 
 function t6() {
-  let a = 88;
-  return a;
+	let a = 88
+	return a
 }
-console.log(t6());
 
-console.groupEnd();
+console.groupEnd()
 
-console.group('example 7');
-const arr = [
-  [3, 4, 5],
-  [6, 7, 9],
-  [7, 7, 1],
-  [2, 2],
-];
+// ex 7 return
+console.group('example 7')
+const arr7 = [[3, 4, 5], [6, 7, 9], [7, 7, 1], [2, 2]]
 
-const evenArr = arr.filter(function (item) {
-  return sum(item) % 2 === 0;
-});
+const evenArr7 = arr7.filter(function (item) {
+	return (sum(item) % 2 === 0)
+})
+console.log(evenArr7)
+console.groupEnd()
 
-console.log(evenArr);
-
-//  return Функции
+// ex8 return function
 
 function t8() {
-  return sum;
+	return sum
 }
 
-let s = t8();
-
-console.log(s([10, 20, 30]));
-
-function sum(a, b) {
-  return a + b;
-}
-
-let a = sum(4, 5);
-console.log(a);
-
-
+let s = t8()
+console.log(s([10, 20, 30]))
