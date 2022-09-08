@@ -1,118 +1,119 @@
 'use strict';
 
-// УРОК СТРЕЛОЧНАЯ ФУНКЦИЯ =>
+// УРОК function callback
 
-function sum(a, b) {
-	return a + b
+const arr1 = [7, 4, 5, 6, 8]
+const out1 = document.querySelector('.out-1')
+const out2 = document.querySelector('.out-2')
+const out3 = document.querySelector('.out-3')
+
+function f1(arr, myFunc, block) {
+	arr[3] = arr[3] * 2
+	// out1.innerHTML = arr1
+	myFunc(arr, block)
 }
 
-
-function multi(a, b) {
-	return a * b
-	
-}
-
-// СТРЕЛОЧНЫЕ ФУНКЦИИ ЭТО БОЛЕЕ СОКРАЩЕНЫЙ СПОСОБ ЗАПИСИ АНОНИМНОЙ ФУНКЦИИ
-
-
-// ПРИМЕР №1
-document.querySelector('.b-1').addEventListener('click', function () {
-	let res = sum(23, 45)
-	console.log(res)
-})
-
-
-document.querySelector('.b-1').addEventListener('click', () => {
-	let res = sum(23, 45)
-	console.log(res)
-})
-
-// Запуск двух функций
-
-document.querySelector('.b-2').addEventListener('click', function () {
-	let res = sum(23, 45)
-	console.log(res)
-	let res2 = multi(23, 45)
-	console.log(res2)
-})
-// СТРЕЛОЧНАЯ ФУНКЦИЯ
-
-document.querySelector('.b-2').addEventListener('click', () => {
-	let res = sum(23, 45)
-	console.log(res)
-	let res2 = multi(23, 45)
-	console.log(res2)
-})
-
-// СТРЕЛОЧНАЯ ФУНКЦИЯ В callback
-
-const ar1 = [4, 5, 6, 7, 8]
-
-function pow2(a) {
-	return a ** 2
-}
-
-const res2 = ar1.map(pow2)
-console.log(res2)
-
-
-const res3 = ar1.map(function (a) {
-	return a ** 2
-})
-console.log(res3)
-
-//Применяю стрелочную функцию
-
-const res4 = ar1.map((a) => {
-	return a ** 2
-})
-console.log(res4)
-
-// Сокращенный синтаксис стрелочной функции
-
-const res5 = ar1.map((a) => {
-	return a ** 2
-})
-console.log(res5)
-
-// в Одну строку убрать {} return
-
-const res6 = ar1.map((a) => a ** 2)
-console.log(res6)
-
-// Если один аргумент можно убрать ()
-
-const res7 = ar1.map(a => a ** 2)
-console.log(res7)
-
-
-// МЕТОД filter
-//ЗАПИСЬ ЧЕРЕЗ function
-const res8 = ar1.filter(function (item, index) {
-	if (index % 2 === 0) {
-		return true
+function showArr(arr, block) {
+	let out = ''
+	for (let i = 0; i < arr.length; i++) {
+		out += arr[i] + '_'
 	}
-})
-console.log(res8)
-
-//ЗАПИСЬ ЧЕРЕЗ СТРЕЛОЧНУЮ ФУНКЦИЮ =>
-
-const res9 = ar1.filter((item, index) => index % 2 === 0)
-console.log(res9)
-
-
-// arrow & this
-
-document.querySelector('.b-3').addEventListener('click', function () {
-	console.log(this)
-})
-
-document.querySelector('.b-3').addEventListener('click', () => console.log(this))
-
-// arrow аргументы
-
-const f1 = (...arg) => {
-	console.log(arg)
-	console.log('work')
+	block.innerHTML = out
 }
-f1(99, 100)
+
+
+function showArr2(arr, block) {
+	let out = ''
+	for (let i = 0; i < arr.length; i++) {
+		out += arr[i] + '*'
+	}
+	block.innerHTML = out
+}
+
+f1(arr1, showArr, out1)
+f1(arr1, showArr2, out2)
+
+// пример callback
+
+function squad(item) {
+	return item ** 2
+}
+
+// const arr2 = arr1.map(squad)
+const arr2 = arr1.map(item => item ** 2)
+console.log(arr2)
+showArr(arr2, out3)
+
+
+//Пример с input
+
+document.querySelector('.b-4').addEventListener('click', () => getUserName(fixUserName))
+
+function getUserName(fixFunc) {
+	const userName = document.querySelector('.i-4').value
+	console.log(fixFunc(userName))
+}
+
+
+function fixUserName(str) {
+	return str.trim().toLowerCase()
+}
+
+
+// Асинхронные callback функции
+
+// async function pageLoader(callback) {
+// 	const data = await fetch('http://jsonplaceholder.typicode.com/todos/1')
+// 	callback(data)
+// }
+
+// function pageLoader(callback) {
+// 	fetch('http://jsonplaceholder.typicode.com/todos/1')
+// 		.then(response => respose.json())
+// 		.then(json => callback(json))
+// }
+//
+// function getAJAX(data) {
+// 	console.log('Послал запрос')
+// 	console.log('Ответ сервера')
+// 	console.log(data)
+// }
+//
+// pageLoader(getAJAX)
+
+
+// function pageLoader(callback) {
+// 	fetch('http://jsonplaceholder.typicode.com/todos/1')
+// 		.then(response => response.json())
+// 		.then(json => {
+// 			console.log('Послал запрос')
+// 			console.log('Ответ сервера')
+// 			console.log(json)
+// 			fetch('http://jsonplaceholder.typicode.com/users/' + json.usedId)
+// 				.then(response => response.json())
+// 				.then(json => {
+// 					console.log('Послал запрос')
+// 					console.log('Ответ сервера')
+// 					console.log(json)
+// 				})
+// 		})
+// }
+
+function pageLoader(url, callback) {
+	fetch(url)
+		.then(response => response.json())
+		.then(json => callback(json))
+}
+
+function getAJAX(data) {
+	console.log('Послал запрос')
+	console.log('Ответ сервера')
+	console.log(data)
+	pageLoader('https://jsonplaceholder.typicode.com/users/' + data.userId, showUser)
+}
+
+function showUser(user) {
+	console.log(user)
+}
+
+pageLoader('https://jsonplaceholder.typicode.com/todos/1', getAJAX)
