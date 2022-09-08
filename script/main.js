@@ -1,43 +1,118 @@
 'use strict';
 
-// УРОК -- УСЛОВИЯ   if // else//  else if
+// УРОК СТРЕЛОЧНАЯ ФУНКЦИЯ =>
 
-if (4 == 9) {
-  console.log('Ok');
-} else {
-  console.log('ERROR');
+function sum(a, b) {
+	return a + b
 }
 
-const num = 50;
 
-if (num < 49) {
-  console.log('ERROR');
-} else if (num > 100) {
-  console.log('МНОГО');
-} else {
-  console.log('ОК!');
+function multi(a, b) {
+	return a * b
+	
 }
 
-//  ТЕРНАРНЫЙ ОПЕРАТОР
-// В ЕГО РАБОТЕ УЧАСТВУЮТ 3 АРГУМЕНТА (1 АРГУМЕНТ : num === 50)(2 АРГУМЕНТ console.log('ОК!') (3 АРГУМЕНТ console.log('ERROR')
+// СТРЕЛОЧНЫЕ ФУНКЦИИ ЭТО БОЛЕЕ СОКРАЩЕНЫЙ СПОСОБ ЗАПИСИ АНОНИМНОЙ ФУНКЦИИ
 
-num === 50 ? console.log('ОК!') : console.log('ERROR');
 
-const number = 40;
-// switch ВСЕГДА ИДЕТ НА СТРОГОЕ СООТВЕТСВИЕ
+// ПРИМЕР №1
+document.querySelector('.b-1').addEventListener('click', function () {
+	let res = sum(23, 45)
+	console.log(res)
+})
 
-switch (number) {
-  case 41:
-    console.log('НЕВЕРНО');
-    break;
-  case 100:
-    console.log('НЕВЕРНО');
-    break;
-  case 40:
-    console.log('ВЕРНО');
-    break;
-  default:
-    console.log('НЕ в этот раз');
-    break;
+
+document.querySelector('.b-1').addEventListener('click', () => {
+	let res = sum(23, 45)
+	console.log(res)
+})
+
+// Запуск двух функций
+
+document.querySelector('.b-2').addEventListener('click', function () {
+	let res = sum(23, 45)
+	console.log(res)
+	let res2 = multi(23, 45)
+	console.log(res2)
+})
+// СТРЕЛОЧНАЯ ФУНКЦИЯ
+
+document.querySelector('.b-2').addEventListener('click', () => {
+	let res = sum(23, 45)
+	console.log(res)
+	let res2 = multi(23, 45)
+	console.log(res2)
+})
+
+// СТРЕЛОЧНАЯ ФУНКЦИЯ В callback
+
+const ar1 = [4, 5, 6, 7, 8]
+
+function pow2(a) {
+	return a ** 2
 }
-// ЕСЛИ ВСЕ НЕВЕРНО и ДЛЯ ТОГО ЧТОБЫ ВЫПОЛНИТЬ КАКОЕ ТО ДЕЙСТВИЕ ПО УМОЛЧАНИЮ default
+
+const res2 = ar1.map(pow2)
+console.log(res2)
+
+
+const res3 = ar1.map(function (a) {
+	return a ** 2
+})
+console.log(res3)
+
+//Применяю стрелочную функцию
+
+const res4 = ar1.map((a) => {
+	return a ** 2
+})
+console.log(res4)
+
+// Сокращенный синтаксис стрелочной функции
+
+const res5 = ar1.map((a) => {
+	return a ** 2
+})
+console.log(res5)
+
+// в Одну строку убрать {} return
+
+const res6 = ar1.map((a) => a ** 2)
+console.log(res6)
+
+// Если один аргумент можно убрать ()
+
+const res7 = ar1.map(a => a ** 2)
+console.log(res7)
+
+
+// МЕТОД filter
+//ЗАПИСЬ ЧЕРЕЗ function
+const res8 = ar1.filter(function (item, index) {
+	if (index % 2 === 0) {
+		return true
+	}
+})
+console.log(res8)
+
+//ЗАПИСЬ ЧЕРЕЗ СТРЕЛОЧНУЮ ФУНКЦИЮ =>
+
+const res9 = ar1.filter((item, index) => index % 2 === 0)
+console.log(res9)
+
+
+// arrow & this
+
+document.querySelector('.b-3').addEventListener('click', function () {
+	console.log(this)
+})
+
+document.querySelector('.b-3').addEventListener('click', () => console.log(this))
+
+// arrow аргументы
+
+const f1 = (...arg) => {
+	console.log(arg)
+	console.log('work')
+}
+f1(99, 100)
