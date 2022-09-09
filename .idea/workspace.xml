@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a8bc5215-d272-4fde-9786-69e347464dbc" name="Changes" comment="подробный разбор function callback">
+    <list default="true" id="a8bc5215-d272-4fde-9786-69e347464dbc" name="Changes" comment="подробный разбор this/call/apply/bind">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/script/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/script/main.js" afterDir="false" />
@@ -17,7 +17,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="function_callback" />
+        <entry key="$PROJECT_DIR$" value="function_this_call_apply_bind" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -98,7 +98,9 @@
       <workItem from="1662661774272" duration="7853000" />
       <workItem from="1662716228608" duration="2862000" />
       <workItem from="1662733860858" duration="930000" />
-      <workItem from="1662736735340" duration="3515000" />
+      <workItem from="1662736735340" duration="5061000" />
+      <workItem from="1662747542931" duration="648000" />
+      <workItem from="1662755399057" duration="1325000" />
     </task>
     <task id="LOCAL-00001" summary="подробный разбор function return">
       <created>1662584066191</created>
@@ -121,7 +123,14 @@
       <option name="project" value="LOCAL" />
       <updated>1662669786674</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="подробный разбор this/call/apply/bind">
+      <created>1662740383054</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1662740383054</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -142,6 +151,7 @@
     <MESSAGE value="подробный разбор function return" />
     <MESSAGE value="подробный разбор function arrow" />
     <MESSAGE value="подробный разбор function callback" />
-    <option name="LAST_COMMIT_MESSAGE" value="подробный разбор function callback" />
+    <MESSAGE value="подробный разбор this/call/apply/bind" />
+    <option name="LAST_COMMIT_MESSAGE" value="подробный разбор this/call/apply/bind" />
   </component>
 </project>

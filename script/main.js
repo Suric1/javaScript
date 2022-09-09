@@ -1,117 +1,48 @@
-'use strict';
+// 'use strict';
 
-// Контекст в function
-// Контекст = область видимости + переменная this
-// this - ссылка на обьект который вызывает код в данный момент
+// function declaration
 
-let count = 0
-
-function f1() {
-	console.log(count)
-	console.log(this)
-	this.textContent = count
-	count++
-}
-
-// document.querySelector('.b-4').addEventListener('click', f1)
-
-
-// СТРЕЛОЧНАЯ ФУНКЦИЯ НЕ ИМЕЮТ this
-
-// const f2 = () => {
-// 	console.log(count)
-// 	console.log(this)
-// 	this.textContent = count
-// 	count++
+//
+// if (false) {
+// 	function f1() {
+// 		console.log('function 1 if')
+// 	}
+// } else {
+// 	function f1() {
+// 		console.log('function 1 else')
+// 	}
 // }
+//
+// f1()
 
-// document.querySelector('.b-5').addEventListener('click', f2)
-
-// call
-// f1.call(document.querySelector('.b-4'))
-// f1.call(document.querySelector('.b-5'))
+// function expression
 
 
-document.querySelector('.b-4').addEventListener('click', () => {
-	f1.call(document.querySelector('.b-5'))
-})
-
-function f3(count) {
-	console.log(count)
-	console.log(this)
-	this.textContent = count
+function f2() {
+	console.log(f2.name)
+	console.log('function f2')
 }
 
-document.querySelector('.b-6').addEventListener('click', () => {
-	count++
-	f3.call(document.querySelector('.b-5'), count)
-})
+// f2()
 
-function sum1(a, b) {
-	this.innerHTML = a + b
+//  ВЫЗЫВАТЬ function expression НЕЛЬЗЯ РАНЬШЕ ЧЕМ ОБЬЯВЛЕНА ФУНКЦИЯ
+const f3 = function (a) {
+	return ('function f3' + a)
 }
 
-document.querySelector('.b-5').addEventListener('click', () => {
-	sum1.call(document.querySelector('.out-3'), 13, 4)
-	sum1.apply(document.querySelector('.out-4'), [13, 4])
-})
+const f4 = function () {
+	console.log(f4.name)
+	console.log('function f3')
+}
 
-// метод bind
 
-const f4 = f1.bind(document.querySelector('.out-4'))
+const f5 = function example() {
+	console.log(f5.name)
+	console.log(example.name)
+	console.log('function example')
+}
+const f6 = f5
+f5(44444)
+f6()
 f4()
-f4()
-f4()
-document.querySelector('.b-7').addEventListener('click', f4)
 
-const sum2 = sum1.bind(document.querySelector('.out-6'))
-sum2(4, 5)
-sum2(4, 15)
-
-// Частичные функции, с переопределенным аргументом (частичные вычисления)
-
-function sum3(a, b, c) {
-	console.log(arguments)
-	this.innerHTML = a + b + c
-}
-
-const sum4 = sum3.bind(document.querySelector('.b-8'), 100)
-
-document.querySelector('.b-8').addEventListener('click', () => {
-	sum4(6, 7,)
-})
-
-
-function sum7(a, b, c) {
-	return a + b + c
-}
-
-
-const sum8 = sum7.bind(undefined, 100, 300)
-
-document.querySelector('.b-7').addEventListener('click', () => {
-	document.querySelector('.out7').textContent = sum8(15)
-})
-
-
-// Вытягивания методов
-
-const validate = {
-	password: 'suridd',
-	email: 'suri@sirm',
-	isValid: false,
-	sayHi() {
-		console.log(this)
-		return (this.password.length > 6) ? true : false
-	}
-}
-
-console.log(validate.sayHi())
-
-
-const obj = {password: 'hello5555'}
-const validatePassword = validate.sayHi.bind(obj)
-
-console.log(validatePassword())
-obj.password = '123'
-console.log(validatePassword())
