@@ -1,0 +1,43 @@
+Index: script/main.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/script/main.js b/script/main.js
+--- a/script/main.js	
++++ b/script/main.js	
+@@ -1,8 +1,29 @@
+ 'use strict';
+ 
+-function sayHello(name) {
+-  return `Hello, ${name}`
+-}
++const str = 'test'
++
++
++console.log(str.toUpperCase())
++
++const fruit = 'Some fruit'
++
++console.log(fruit.indexOf('i'))
++
++
++const logg = 'Hello world'
++
++console.log(logg.slice(6, 11))
++
++console.log(logg.substring(6, 11))
++
++console.log(logg.substr(6, 5))
++
+ 
+-sayHello('Mr. Spock')
++const num = 12.2
++console.log(Math.round(num))
++
++const test2 = '12.2px'
++
++console.log(parseInt(test2))
+ 
++console.log(parseFloat(test2))
+\ No newline at end of file
