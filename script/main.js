@@ -1,145 +1,77 @@
-// Функции высшего порядка
-// Pure функции
+// Рекурсия в Js
+// Рекурсия это вызов функции самой себя
 
+let t = 0
 
-function squad(n) {
-	return n ** 2
+function f1() {
+	t++
+	console.log(t)
+	if (t === 100) return
+	f1()
 }
 
-console.log(squad(4))
+// Цикл
 
-function squad2(n) {
-	document.querySelector('.out-1').textContent = n ** 2
-}
-
-let count = 0
-
-function myCount() {
-	return count++
-}
-
-
-function showAlert() {
-	return 3
-}
-
-
-function randomIn(min, max) {
-	return Math.floor(Math.random() * (max - min) + min)
-}
-
-for (let i = 0; i < 20; i++) {
-	console.log(randomIn(1, 10))
-}
-
-
-function year(d) {
-	let today = new Date()
-	let year = today.getFullYear()
-	return (year - d)
-}
-
-console.log(year(1990))
-
-
-function show(d) {
-	console.log(d)
-}
-
-show(4444)
-
-function hello() {
-	console.log('hello')
-}
-
-hello.hi = 123
-
-
-console.log(hello.hi)
-
-function pOdd() {
-	console.log('odd')
-}
-
-function pEven() {
-	console.log('even')
-}
-
-function myNumber(n, odd, even) {
-	if (n % 2 === 0) return even
-	else
-		return odd
-}
-
-let z = myNumber(5, pOdd, pEven)
-console.log(z)
-z()
-
-const w = [
-	{name: 'Ihor', age: 32},
-	{name: 'Serg', age: 25},
-	{name: 'Sasha', age: 27}
-]
-
-let w1 = []
-for (let i = 0; i < w.length; i++) {
-	if (w[i].age >= 26) w1.push(w[i])
-}
-
-console.log(w1)
-
-w1 = w.filter(mySort)
-
-function mySort(item) {
-	if (item.age >= 26) return true
-}
-
-console.log(w1)
-
-w1 = w.filter(item => item.age >= 26)
-
-
-// Практические примеры функций высшего порядка
-
-const user = {
-	age: 32,
-	password: 'sfaf11',
-	agreeToTerms: true
-}
-
-function checkAge(user) {
-	return user.age > 18
-}
-
-function checkPassword(user) {
-	return user.password.length >= 6
-}
-
-function checkTerms(user) {
-	return user.agreeToTerms === true
-}
-
-console.log(checkAge(user))
-
-
-function validate(obj, ...tests) {
-	for (let i = 0; i < tests.length; i++) {
-		if (tests[i](obj) === false) return false
+function f2() {
+	let out = ""
+	for (let i = 1; i <= 25; i++) {
+		out += i + ' '
 	}
-	return true
+	console.log(out)
 }
 
-console.log(validate(user, checkAge, checkPassword, checkTerms))
+f2()
+
+// Тот же пример через рекурсию
+
+let i = 0
+let out = ''
+
+function f3() {
+	i++
+	out += i + ' '
+	if (i >= 25) return
+	f3()
+}
+
+f3()
+console.log(out)
 
 
-function createValidator(...tests) {
-	return function (obj) {
-		for (let i = 0; i < tests.length; i++) {
-			if (tests[i](obj) === false) return false
-		}
-		return true
+// Задача
+
+function randomInteger(min, max) {
+	let rand = min + Math.random() * (max + 1 - min)
+	return Math.floor(rand)
+}
+
+let s1 = 0
+
+function moneyRecursion() {
+	let m = randomInteger(0, 100)
+	console.log('add ' + m)
+	s1 += m
+	console.log('sum: ' + s1)
+	if (s1 >= 400) return
+	moneyRecursion()
+}
+
+moneyRecursion()
+
+// Через цикл
+
+function moneyCycle() {
+	let s2 = 0
+	for (let i = 0; true; i++) {
+		let m = randomInteger(0, 100)
+		console.log('add ' + m)
+		s2 += m
+		console.log('sum: ' + s2)
+		if (s2 >= 400) return
 	}
 }
 
-const validator1 = createValidator(checkAge, checkPassword, checkTerms)
-console.log(validator1(user))
+moneyCycle()
+
+
+
