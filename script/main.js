@@ -1,130 +1,79 @@
-'use strict';
+// ЗАМАКАНИЕ
 
-let numberOfFilms
+// ЗАМЫКАНИЕ ЭТО ПРИЕМ ПРОГРАММИРОВАНИЯ КОГДА СОЗДАЕТСЯ ФУНКЦИЯ ВНУТРИ КОТОРОЙ ПОМЕЩАЮТСЯ НУЖНЫЕ ДАННЫЕ И СПОСОБЫ МАНИПУЛИРОВАНИИ
 
-function start() {
-  numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
-  
-  while (numberOfFilms == '' || numberOfFilms == null ||isNaN(numberOfFilms)) {
-    numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
-  }
+//===============================================
+//== КАК ФУНКЦИИ ОБРАЩАЮТСЯ К ПЕРЕМЕННЫМ ПРИМЕР 1
+//===============================================
+
+let a = 10
+
+function f1() {
+	console.log('(global)a = ' + a)
 }
 
+f1()
 
-start()
-
-const personalMovieDB = {
-  count: numberOfFilms,
-  movies: {},
-  actors: {},
-  genres: [],
-  privat: false,
-};
+//===============================================
+//== КАК ФУНКЦИИ ОБРАЩАЮТСЯ К ПЕРЕМЕННЫМ ПРИМЕР 1
+//===============================================
 
 
-
-function rememberMyFilms() {
-  for (let i = 0; i < 2; i++) {
-    const a = prompt('Один из последних просмотренных фильмов', ''),
-      b = prompt('На сколько оцените его?', '');
-    
-    if (a != null && b != null && a != '' && b != '' && a.length < 50) {
-      personalMovieDB.movies[a] = b;
-      console.log('all done');
-    } else {
-      console.log('error');
-      i--;
-    }
-  }
+function f2() {
+	let a = 33
+	console.log('(local)a = ' + a)
 }
 
-rememberMyFilms()
+f2()
 
 
-console.log(personalMovieDB);
+//===============================================
+//== ИНОГДА ПЕРЕМЕННЫЕ НУЖНЫ СНАРУЖИ
+//===============================================
 
-function detectPersonalLevel() {
-  if (personalMovieDB.count < 10) {
-    console.log('Просмотрено довольно мало фильмов');
-  } else if (personalMovieDB.count >= 10 && personalMovieDB < 30) {
-    console.log('Вы классический зритель');
-  } else if (personalMovieDB.count >= 30) {
-    console.log('Вы Киноман');
-  } else {
-    console.log('Произошла ошибка');
-  }
-}
-detectPersonalLevel()
-
-
-function showMyDB(hidden) {
-  if (!hidden) {
-    console.log(personalMovieDB);
-  }
+function createStep(n = 0) {
+	let count = 0
+	
+	return function () {
+		count++
+		console.log(count)
+	}
 }
 
-showMyDB(personalMovieDB.privat)
+let step1 = createStep()
+let step2 = createStep(200)
+
+step1()
+step1()
+step2()
+step1()
+step1()
 
 
-function writeYourGenres() {
-  for ( let i = 1; i <= 3; i++) {
-    personalMovieDB.genres[i - 1] = prompt(`Ваш любимый жанр под номером ${i}`)
-  }
+//===============================================
+//== C РЕКУРСИЕЙ
+//===============================================
+
+
+function randomInteger(min, max) {
+	let rand = min - 0.5 + Math.random() * (max - min + 1)
+	return Math.round(rand)
 }
 
-writeYourGenres()
+function createBeggar() {
+	let s = 0
+	
+	return function beggar() {
+		s += randomInteger(0, 100)
+		console.log(s)
+		if (s >= 250) return
+		beggar()
+	}
+}
+
+let begg1 = createBeggar()
+begg1()
 
 
+let p
 
-//
-// //  КАЛЬКУЛЯТОР СЛОЖЕНИЯ
-//
-// let numberOne = document.querySelector('.number-one');
-// let numberTwo = document.querySelector('.number-two');
-//
-// let plusButton = document.querySelector('.plus');
-// let minusButton = document.querySelector('.minus');
-// let divideButton = document.querySelector('.divide');
-// let multiplyButton = document.querySelector('.multiply');
-//
-// let clearButton = document.querySelector('.clear');
-//
-// let resultText = document.querySelector('.result');
-//
-// clearButton.addEventListener('click', function () {
-//   resultText.innerText = '';
-//   numberOne.value = '';
-//   numberTwo.value = '';
-// });
-// plusButton.addEventListener('click', function () {
-//   let numOne = parseInt(numberOne.value);
-//   let numTwo = parseInt(numberTwo.value);
-//
-//   let sum = numOne + numTwo;
-//   resultText.innerText = sum;
-// });
-//
-// //  КАЛЬКУЛЯТОР ВЫЧИТАНИЯ
-// minusButton.addEventListener('click', function () {
-//   let numOne = parseInt(numberOne.value);
-//   let numTwo = parseInt(numberTwo.value);
-//
-//   let minus = numOne - numTwo;
-//   resultText.innerText = minus;
-// });
-//
-// divideButton.addEventListener('click', function () {
-//   let numOne = parseInt(numberOne.value);
-//   let numTwo = parseInt(numberTwo.value);
-//
-//   let divide = numOne / numTwo;
-//   resultText.innerText = divide;
-// });
-//
-// multiplyButton.addEventListener('click', function () {
-//   let numOne = parseInt(numberOne.value);
-//   let numTwo = parseInt(numberTwo.value);
-//
-//   let multiply = numOne * numTwo;
-//   resultText.innerText = multiply;
-// });
