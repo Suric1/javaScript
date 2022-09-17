@@ -1,0 +1,161 @@
+Index: script/main.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>'use strict';\r\n\r\n// ОПЕРАТОРЫ В JS\r\n\r\nconsole.log('arr' + '-object');\r\nconsole.log(4 + '-object');\r\n\r\n// ИНКРИМЕНТ И ДЕКРИМЕНТ\r\nlet incr = 10,\r\n  decr = 10;\r\n\r\n// Оператор ИНКРИМЕНТА УВЕЛИЧЕНИЕ НА 1\r\nincr++;\r\n//  Оператор ДЕКРИМЕНТ УМЕНШЕНИЕ НА 1\r\ndecr--;\r\nconsole.log(incr);\r\nconsole.log(decr);\r\n\r\n// ++ПРЕФИКСНЫЕ  ПОСТФИКСНЫЕ++\r\n\r\n//  Оператор % возвращает отстаток от деления 2х чисел\r\nconsole.log(5 % 2);\r\n\r\n// Оператор равенства ==\r\n// Строгое сравнение(равенство) ===\r\nconsole.log(2 * 4 == 8);\r\n\r\n// Логические операторы И (&&) ИЛИ (||)\r\n\r\nconst isChecked = true,\r\n  isClose = true;\r\n\r\n// Если оба правдивые true\r\nconsole.log(isChecked && isClose);\r\n\r\n// Хотя бы один true\r\nconsole.log(isChecked || isChecked);\r\n\r\n//  Оператор отрицания !\r\nconsole.log(isChecked || !isClose);\r\nconsole.log(2 + 2 * 2 != 8);\r\nconsole.log(2 + 2 * 2 !== 8);\r\n\r\n//  ЛОГИЧЕСКИЕ ОПЕРАТОРЫ\r\n\r\n// const hamburger = 5;\r\n// const fries = 0;\r\n\r\n// if (hamburger && fries) {\r\n//   console.log('Я сыт');\r\n// }\r\n\r\n// const hamburger = 3;\r\n// const fries = 1;\r\n// const cola = 0;\r\n\r\n// console.log(hamburger === 3 && cola && fries);\r\n\r\n// console.log(1 && 0);\r\n// console.log(1 && 5);\r\n// console.log(null & 5);\r\n// console.log(0 && 'fsafaa');\r\n\r\n// Оператор И (&&) Всегда возвращает первое ложное значение и дальше код не идет\r\n// Если все аргументы верны код дошел до конца то возвращается значение последнего аргумента\r\n\r\n// if (hamburger === 3 && cola === 1 && fries) {\r\n//   console.log('Все сыты!');\r\n// } else {\r\n//   console.log('Мы уходим!');\r\n// }\r\n\r\n// const hamburger = 0;\r\n// const fries = 0;\r\n// const cola = 0;\r\n\r\n// console.log(hamburger || cola || fries);\r\n\r\n// if (hamburger || cola || fries) {\r\n//   console.log('Все довольны!');\r\n// } else {\r\n//   console.log('Мы уходим!');\r\n// }\r\n\r\n// Оператор ИЛИ ( || ) запинается на правдивом выражении. Когда правда найдена то значение будет возвращено\r\n// Если все не правда, возвращается последнее ложное значение\r\n\r\nlet johnReport,\r\n  alexReport,\r\n  samReport,\r\n  mariaReport = 'done';\r\n\r\nconsole.log(johnReport || alexReport || samReport || mariaReport);\r\n\r\nconst hamburger = 3;\r\nconst fries = 0;\r\nconst cola = 2;\r\nconst nuggets = 2;\r\n\r\nconsole.log((hamburger === 3 && cola === 2) || (fries === 3 && nuggets));\r\n\r\nif (hamburger || cola || fries) {\r\n  console.log('Все довольны!');\r\n} else {\r\n  console.log('Мы уходим!');\r\n}\r\n\r\n//  ОПЕРАТОР НЕ !\r\nconsole.log(!0);\r\n\r\n// ЗАДАЧИ \r\n// console.log( NaN || 2 || undefined );\r\n\r\n// console.log( NaN && 2 && undefined );\r\n\r\n// console.log( 1 && 2 && 3 );\r\n\r\n// console.log( !1 && 2 || !3 );\r\n\r\n// console.log( 25 || null && !3 );\r\n\r\n// console.log( NaN || null || !3 || undefined || 5);\r\n\r\n// console.log( NaN || null && !3 && undefined || 5);\r\n\r\n// console.log( 5 === 5 && 3 > 1 || 5);\r\n\r\n\r\n// let hamburger;\r\n// const fries = NaN;\r\n// const cola = 0;\r\n// const nuggets = 2;\r\n \r\n// if (hamburger && cola || fries === 3 && nuggets) {\r\n//    console.log('Done!')\r\n\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/script/main.js b/script/main.js
+--- a/script/main.js	(revision ab3bdfc93667562ef4d08f292e5364de49658c34)
++++ b/script/main.js	(date 1663432607399)
+@@ -1,137 +1,22 @@
+-'use strict';
+-
+-// ОПЕРАТОРЫ В JS
+-
+-console.log('arr' + '-object');
+-console.log(4 + '-object');
+-
+-// ИНКРИМЕНТ И ДЕКРИМЕНТ
+-let incr = 10,
+-  decr = 10;
+-
+-// Оператор ИНКРИМЕНТА УВЕЛИЧЕНИЕ НА 1
+-incr++;
+-//  Оператор ДЕКРИМЕНТ УМЕНШЕНИЕ НА 1
+-decr--;
+-console.log(incr);
+-console.log(decr);
+-
+-// ++ПРЕФИКСНЫЕ  ПОСТФИКСНЫЕ++
+-
+-//  Оператор % возвращает отстаток от деления 2х чисел
+-console.log(5 % 2);
+-
+-// Оператор равенства ==
+-// Строгое сравнение(равенство) ===
+-console.log(2 * 4 == 8);
+-
+-// Логические операторы И (&&) ИЛИ (||)
+-
+-const isChecked = true,
+-  isClose = true;
+-
+-// Если оба правдивые true
+-console.log(isChecked && isClose);
+-
+-// Хотя бы один true
+-console.log(isChecked || isChecked);
+-
+-//  Оператор отрицания !
+-console.log(isChecked || !isClose);
+-console.log(2 + 2 * 2 != 8);
+-console.log(2 + 2 * 2 !== 8);
+-
+-//  ЛОГИЧЕСКИЕ ОПЕРАТОРЫ
+-
+-// const hamburger = 5;
+-// const fries = 0;
+-
+-// if (hamburger && fries) {
+-//   console.log('Я сыт');
+-// }
+-
+-// const hamburger = 3;
+-// const fries = 1;
+-// const cola = 0;
+-
+-// console.log(hamburger === 3 && cola && fries);
+-
+-// console.log(1 && 0);
+-// console.log(1 && 5);
+-// console.log(null & 5);
+-// console.log(0 && 'fsafaa');
+-
+-// Оператор И (&&) Всегда возвращает первое ложное значение и дальше код не идет
+-// Если все аргументы верны код дошел до конца то возвращается значение последнего аргумента
++let str = 'some'
++let strObj = String(str)
+ 
+-// if (hamburger === 3 && cola === 1 && fries) {
+-//   console.log('Все сыты!');
+-// } else {
+-//   console.log('Мы уходим!');
+-// }
+ 
+-// const hamburger = 0;
+-// const fries = 0;
+-// const cola = 0;
++console.log(typeof (str))
++console.log(typeof (strObj))
+ 
+-// console.log(hamburger || cola || fries);
++console.dir([1, 2, 3, 4])
+ 
+-// if (hamburger || cola || fries) {
+-//   console.log('Все довольны!');
+-// } else {
+-//   console.log('Мы уходим!');
+-// }
+ 
+-// Оператор ИЛИ ( || ) запинается на правдивом выражении. Когда правда найдена то значение будет возвращено
+-// Если все не правда, возвращается последнее ложное значение
+-
+-let johnReport,
+-  alexReport,
+-  samReport,
+-  mariaReport = 'done';
+-
+-console.log(johnReport || alexReport || samReport || mariaReport);
+-
+-const hamburger = 3;
+-const fries = 0;
+-const cola = 2;
+-const nuggets = 2;
+-
+-console.log((hamburger === 3 && cola === 2) || (fries === 3 && nuggets));
+-
+-if (hamburger || cola || fries) {
+-  console.log('Все довольны!');
+-} else {
+-  console.log('Мы уходим!');
++const soldier = {
++	health: 400,
++	armor: 100,
++	sayHello: function () {
++		console.log('SURICAT HELLO')
++	}
+ }
+-
+-//  ОПЕРАТОР НЕ !
+-console.log(!0);
+-
+-// ЗАДАЧИ 
+-// console.log( NaN || 2 || undefined );
+-
+-// console.log( NaN && 2 && undefined );
+-
+-// console.log( 1 && 2 && 3 );
+ 
+-// console.log( !1 && 2 || !3 );
+ 
+-// console.log( 25 || null && !3 );
++const john = Object.create(soldier)
+ 
+-// console.log( NaN || null || !3 || undefined || 5);
+-
+-// console.log( NaN || null && !3 && undefined || 5);
+-
+-// console.log( 5 === 5 && 3 > 1 || 5);
+-
+-
+-// let hamburger;
+-// const fries = NaN;
+-// const cola = 0;
+-// const nuggets = 2;
+- 
+-// if (hamburger && cola || fries === 3 && nuggets) {
+-//    console.log('Done!')
+-
+-
++john.sayHello()
